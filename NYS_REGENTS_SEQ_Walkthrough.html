@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYS Regents SEQ Walkthrough</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            overflow: hidden;
+            background-color: #1a1a1a;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+            transform: scale(0.95);
+            opacity: 0;
+            padding: 2rem;
+            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slide.active {
+            transform: scale(1);
+            opacity: 1;
+            z-index: 10;
+        }
+        .slide-content {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            color: #f0f0f0;
+        }
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .title-main {
+            font-size: 6rem;
+            line-height: 1;
+            color: #e63946;
+            text-shadow: 3px 3px 0px #1d3557;
+        }
+        .title-sub {
+            font-size: 2.5rem;
+            color: #f1faee;
+        }
+        .highlight {
+            background-color: #e63946;
+            color: #f1faee;
+            padding: 0.2rem 0.5rem;
+        }
+        .slide-bg {
+            background: #1d3557;
+            border: 4px solid #f1faee;
+            padding: 2rem;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        /* For Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #e63946 #1d3557;
+        }
+
+        /* For Chrome, Safari, and Opera */
+        *::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: #1d3557;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #e63946;
+            border: 2px solid #1d3557;
+        }
+        
+        #navigation-bar {
+            background-color: #1d3557;
+            border-top: 3px solid #e63946;
+        }
+
+        .nav-btn {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.3s;
+        }
+        .nav-btn:disabled {
+            background-color: #457b9d !important;
+            color: #a8dadc !important;
+            cursor: not-allowed;
+        }
+        .annotation {
+            border-left: 3px solid #fca311;
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+            color: #fca311;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Slide 1: Title -->
+    <div id="slide-1" class="slide active">
+        <div class="slide-content text-center">
+            <h1 class="title-main mb-4">DECODING THE SEQ</h1>
+            <p class="title-sub">NYS U.S. HISTORY REGENTS // SET 1</p>
+            <p class="mt-12 text-lg text-gray-400 animate-pulse">USE ARROWS TO NAVIGATE THE BRIEFING</p>
+        </div>
+    </div>
+
+    <!-- Slide 2: The Prompt -->
+    <div id="slide-2" class="slide">
+        <div class="slide-content">
+            <div class="slide-bg">
+                <h2 class="text-5xl text-center mb-8 text-amber-300">THE MISSION BRIEF</h2>
+                <p class="text-xl mb-6">Your prompt for SEQ Set 1 is always a two-part objective:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="border-4 border-dashed border-cyan-400 p-6">
+                        <h3 class="text-3xl mb-2 text-cyan-400">OBJECTIVE 1:</h3>
+                        <p class="text-2xl">Describe the <span class="font-bold">HISTORICAL CONTEXT</span> surrounding the documents.</p>
+                    </div>
+                    <div class="border-4 border-dashed border-cyan-400 p-6">
+                        <h3 class="text-3xl mb-2 text-cyan-400">OBJECTIVE 2:</h3>
+                        <p class="text-2xl">Identify & Explain the <span class="font-bold">RELATIONSHIP</span> between them.</p>
+                    </div>
+                </div>
+                 <div class="mt-8 border-t-2 border-amber-300 pt-4">
+                    <p class="text-lg font-bold text-amber-300">Possible Relationships:</p>
+                    <div class="flex flex-wrap gap-4 mt-2 text-lg">
+                        <span class="bg-blue-800 text-white px-3 py-1">Cause and Effect</span>
+                        <span class="bg-green-800 text-white px-3 py-1">Similarity / Difference</span>
+                        <span class="bg-purple-800 text-white px-3 py-1">Turning Point</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Rubric - Historical Context -->
+    <div id="slide-3" class="slide">
+        <div class="slide-content">
+             <div class="slide-bg">
+                <h2 class="text-5xl text-center mb-8 text-amber-300">CONTEXT IS KING</h2>
+                <p class="text-2xl mb-6 text-center">Don't just summarize the docs. You need to paint the picture of the world <span class="font-bold text-red-500">AROUND</span> them.</p>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-center text-xl uppercase">
+                    <div class="bg-gray-900 p-6"><strong>Who</strong>'s fighting?</div>
+                    <div class="bg-gray-900 p-6"><strong>What</strong> went down?</div>
+                    <div class="bg-gray-900 p-6"><strong>When</strong> was it?</div>
+                    <div class="bg-gray-900 p-6"><strong>Where</strong>'s the battleground?</div>
+                    <div class="bg-gray-900 p-6"><strong>Why</strong> did it happen?</div>
+                    <div class="bg-gray-900 p-6"><strong>How</strong> did it unfold?</div>
+                </div>
+                <p class="mt-6 text-sm text-gray-400 text-right">Intel Credit: Michael Paul Wambacher</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Slide 4: Mastery - Historical Context -->
+    <div id="slide-4" class="slide">
+        <div class="slide-content">
+            <div class="slide-bg">
+                <h2 class="text-5xl text-center mb-8 text-amber-300">ACHIEVING MASTERY: CONTEXT</h2>
+                <p class="text-2xl mb-6">To earn top marks, your intel report must:</p>
+                <ul class="list-none space-y-4 text-xl">
+                    <li class="flex items-start"><span class="text-red-500 font-bold text-3xl mr-4">&raquo;</span><span><span class="highlight">FULLY EXPLAIN</span> the circumstances that LED to the events. Think bigger picture.</span></li>
+                    <li class="flex items-start"><span class="text-red-500 font-bold text-3xl mr-4">&raquo;</span><span>Connect your context to <span class="highlight">BOTH</span> documents, not just one.</span></li>
+                    <li class="flex items-start"><span class="text-red-500 font-bold text-3xl mr-4">&raquo;</span><span>Show you know the whole story, the broader historical landscape.</span></li>
+                    <li class="flex items-start"><span class="text-red-500 font-bold text-3xl mr-4">&raquo;</span><span>Ensure <span class="highlight">ZERO INACCURACIES</span>. Bad intel fails the mission.</span></li>
+                </ul>
+                <div class="mt-8 border-t-2 border-amber-300 pt-4">
+                    <h3 class="text-2xl text-amber-300">PRO-TIP:</h3>
+                    <p class="text-xl">Dedicate PARAGRAPH 1 solely to Historical Context. Stay organized, stay on target.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Slide 5: Rubric - Relationship -->
+    <div id="slide-5" class="slide">
+        <div class="slide-content">
+            <div class="slide-bg">
+                <h2 class="text-5xl text-center mb-8 text-amber-300">MASTERY: THE RELATIONSHIP</h2>
+                 <p class="text-2xl mb-6">For your second paragraph, you must:</p>
+                <ul class="list-none space-y-4 text-xl">
+                    <li class="flex items-start"><span class="text-red-500 font-bold text-3xl mr-4">&raquo;</span><span><span class="highlight">EXPLICITLY STATE</span> the relationship. No secrets. Tell the grader what it is.</span></li>
+                    <li class="flex items-start"><span class="text-red-500 font-bold text-3xl mr-4">&raquo;</span><span>Bring in <span class="highlight">OUTSIDE INFORMATION</span>. Prove you know more than what's on the page.</span></li>
+                    <li class="flex items-start"><span class="text-red-500 font-bold text-3xl mr-4">&raquo;</span><span>Use facts <span class="highlight">FROM THE DOCUMENTS</span> as your evidence to support the claim.</span></li>
+                    <li class="flex items-start"><span class="text-red-500 font-bold text-3xl mr-4">&raquo;</span><span>Again, <span class="highlight">NO INACCURACIES</span>. Precision is key.</span></li>
+                </ul>
+                <div class="mt-8 border-t-2 border-amber-300 pt-4">
+                    <h3 class="text-2xl text-amber-300">PRO-TIP:</h3>
+                    <p class="text-xl">Paraphrase, don't quote. Use your own words. It shows true command of the material.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Example Documents -->
+    <div id="slide-6" class="slide">
+        <div class="slide-content">
+            <div class="slide-bg">
+                <h2 class="text-5xl text-center mb-8 text-amber-300">CASE FILE: COLD WAR</h2>
+                <p class="text-2xl mb-6">First step: Analyze the source intel. DATES ARE CRITICAL.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xl">
+                    <div class="border-2 border-gray-400 p-4 bg-gray-900">
+                        <p class="font-bold text-2xl text-red-500">DOCUMENT 1:</p>
+                        <p>President Dwight Eisenhower, Press Conference. <br/><span class="text-4xl font-bold text-white">APRIL 7, 1954</span>.</p>
+                    </div>
+                    <div class="border-2 border-gray-400 p-4 bg-gray-900">
+                        <p class="font-bold text-2xl text-red-500">DOCUMENT 2:</p>
+                        <p>Tonkin Gulf Resolution, U.S. Congress. <br/><span class="text-4xl font-bold text-white">AUGUST 7, 1964</span>.</p>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <h3 class="text-2xl text-amber-300">INITIAL ANALYSIS:</h3>
+                    <ul class="list-disc list-inside mt-2 text-xl">
+                        <li>The events are exactly a decade apart. What happened in between?</li>
+                        <li>This is the height of the <span class="font-bold">COLD WAR</span>.</li>
+                        <li>Think: Containment, Vietnam, fear of Communism.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Document 1 Text -->
+    <div id="slide-7" class="slide">
+        <div class="slide-content">
+            <div class="slide-bg">
+                <h2 class="text-4xl text-center mb-6 text-amber-300">DOCUMENT 1: EISENHOWER'S PRESS CONFERENCE</h2>
+                <blockquote class="border-l-4 border-gray-400 pl-4 text-lg italic text-gray-200 space-y-4">
+                    <p>"...Finally, you have broader considerations that might follow what you would call the 'falling domino' principle. You have a row of dominoes set up, you knock over the first one, and what will happen to the last one is the certainty that it will go over very quickly. So you could have a beginning of a disintegration that would have the most profound influences."</p>
+                    <p>"...But when we come to the possible sequence of events, the loss of Indochina, of Burma, of Thailand, of the Peninsula, and Indonesia following, now you begin to talk about areas that not only multiply the disadvantages that you would suffer through loss of materials, sources of materials, but now you are talking about millions and millions and millions of people."</p>
+                </blockquote>
+                 <p class="text-right mt-4 text-gray-400 font-bold uppercase">— April 7, 1954</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: NEW - Annotating Doc 1 -->
+    <div id="slide-8" class="slide">
+        <div class="slide-content">
+            <div class="slide-bg">
+                <h2 class="text-5xl text-center mb-6 text-amber-300">ANNOTATING DOC 1: KEY INTEL</h2>
+                <div class="space-y-6 text-lg">
+                    <div>
+                        <p class="italic">"...what you would call the '<span class="highlight">falling domino' principle</span>... you knock over the first one... the last one... will go over very quickly."</p>
+                        <p class="annotation"><strong>ANALYSIS:</strong> This is the core concept—the <span class="font-bold">Domino Theory</span>. It frames Communism as a contagion that will inevitably spread from country to country if not stopped.</p>
+                    </div>
+                    <div>
+                        <p class="italic">"...the loss of <span class="highlight">Indochina, of Burma, of Thailand</span>, of the Peninsula, and <span class="highlight">Indonesia</span> following..."</p>
+                        <p class="annotation"><strong>ANALYSIS:</strong> Eisenhower is specifically naming the countries at risk. This isn't a vague fear; it's a <span class="font-bold">geopolitical strategy</span> focused on Southeast Asia.</p>
+                    </div>
+                    <div>
+                        <p class="italic">"...you are talking about <span class="highlight">millions and millions and millions of people</span>."</p>
+                        <p class="annotation"><strong>ANALYSIS:</strong> This raises the stakes. It's not just about territory; it's about <span class="font-bold">ideological control</span> over vast populations and resources.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: NEW - Doc 1 Decoded -->
+    <div id="slide-9" class="slide">
+        <div class="slide-content">
+            <div class="slide-bg text-center">
+                <h2 class="text-5xl mb-6 text-amber-300">DOC 1 DECODED: THE THEORY OF FEAR</h2>
+                <p class="text-3xl mb-4">Document 1 is NOT about an action.</p>
+                <p class="text-3xl mb-8">It's about establishing the <span class="highlight">REASON</span> for a future action.</p>
+                <p class="text-4xl font-bold border-4 border-dashed p-6">It creates the <span class="text-red-500">ideological justification</span>—the FEAR—that will drive U.S. foreign policy in Southeast Asia for decades.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 10: Document 2 Text -->
+    <div id="slide-10" class="slide">
+        <div class="slide-content">
+            <div class="slide-bg">
+                <h2 class="text-4xl text-center mb-6 text-amber-300">DOCUMENT 2: TONKIN GULF RESOLUTION</h2>
+                <blockquote class="border-l-4 border-gray-400 pl-4 text-lg italic text-gray-200 space-y-4">
+                    <p>"Whereas naval units of the Communist regime in Vietnam... have <span class="font-bold">deliberately and repeatedly attacked United States naval vessels</span>... and Whereas these attacks are part of a deliberate and systematic campaign of aggression..."</p>
+                    <p>"Therefore be it Resolved... That the Congress approves and supports the determination of the President... to <span class="font-bold">take all necessary measures to repel any armed attack</span>... and to prevent further aggression."</p>
+                </blockquote>
+                <p class="text-right mt-4 text-gray-400 font-bold uppercase">— August 7, 1964</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Slide 11: NEW - Annotating Doc 2 -->
+    <div id="slide-11" class="slide">
+        <div class="slide-content">
+            <div class="slide-bg">
+                <h2 class="text-5xl text-center mb-6 text-amber-300">ANNOTATING DOC 2: THE GREEN LIGHT</h2>
+                <div class="space-y-6 text-lg">
+                    <div>
+                        <p class="italic">"...naval units of the Communist regime... have <span class="highlight">deliberately and repeatedly attacked United States naval vessels</span>..."</p>
+                        <p class="annotation"><strong>ANALYSIS:</strong> This is the <span class="font-bold">casus belli</span>, or the justification for war. The document claims the U.S. was attacked first, framing America's response as defensive.</p>
+                    </div>
+                    <div>
+                        <p class="italic">"...a deliberate and systematic <span class="highlight">campaign of aggression</span>..."</p>
+                        <p class="annotation"><strong>ANALYSIS:</strong> This language connects back to the Domino Theory. The attack isn't seen as an isolated incident, but as part of a larger, sinister plan of Communist expansion.</p>
+                    </div>
+                    <div>
+                        <p class="italic">"...Congress approves and supports the President... to <span class="highlight">take all necessary measures</span>..."</p>
+                        <p class="annotation"><strong>ANALYSIS:</strong> This is the most critical phrase. It's a <span class="font-bold">"blank check"</span> for war, giving the President broad power to escalate military action without a formal declaration of war from Congress.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 12: NEW - Doc 2 Decoded -->
+    <div id="slide-12" class="slide">
+        <div class="slide-content">
+            <div class="slide-bg text-center">
+                <h2 class="text-5xl mb-6 text-amber-300">DOC 2 DECODED: AUTHORIZATION FOR WAR</h2>
+                <p class="text-3xl mb-4">Document 2 is the <span class="highlight">MECHANISM</span> that turns theory into reality.</p>
+                <p class="text-3xl mb-8">It provides the <span class="highlight">LEGAL</span> and <span class="highlight">POLITICAL</span> cover for military intervention.</p>
+                <p class="text-4xl font-bold border-4 border-dashed p-6">It is the <span class="text-red-500">direct consequence</span> of the fear established in Document 1, giving the President the power to act.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 13: Establishing Context -->
+    <div id="slide-13" class="slide">
+        <div class="slide-content">
+            <div class="slide-bg">
+                <h2 class="text-5xl text-center mb-8 text-amber-300">BUILDING THE CONTEXT</h2>
+                <p class="text-2xl mb-4">Using the docs and outside intel, we establish the battlefield:</p>
+                <ul class="list-disc list-inside space-y-3 text-xl">
+                    <li>The world is locked in the <span class="font-bold">Cold War</span>: USA vs. USSR.</li>
+                    <li>The <span class="font-bold">Korean War</span> just ended in a stalemate, proving the communist threat in Asia was real.</li>
+                    <li>America's grand strategy is <span class="font-bold">CONTAINMENT</span> - stop communism from spreading, no matter where.</li>
+                    <li>The <span class="font-bold">"Domino Theory"</span> from Doc 1 creates a high-stakes environment. The U.S. is primed for a fight.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 14: The Relationship -->
+    <div id="slide-14" class="slide">
+        <div class="slide-content">
+            <div class="slide-bg">
+                <h2 class="text-5xl text-center mb-8 text-amber-300">CONNECTING THE INTEL</h2>
+                 <p class="text-2xl mb-4 text-center">How do the two documents relate?</p>
+                 <div class="flex flex-col md:flex-row items-center justify-around gap-4 text-center">
+                    <div class="p-6 bg-gray-900 flex-1">
+                        <p class="font-bold text-3xl">DOC 1: THE FEAR (1954)</p>
+                        <p class="text-xl mt-2">Eisenhower's Domino Theory establishes the motive.</p>
+                        <p class="font-bold text-4xl text-red-500 mt-4">THE CAUSE</p>
+                    </div>
+                    <div class="text-6xl font-bold text-amber-300 my-4 md:my-0">&rArr;</div>
+                    <div class="p-6 bg-gray-900 flex-1">
+                        <p class="font-bold text-3xl">DOC 2: THE ACTION (1964)</p>
+                        <p class="text-xl mt-2">Congress gives the President a green light for war.</p>
+                        <p class="font-bold text-4xl text-red-500 mt-4">THE EFFECT</p>
+                    </div>
+                </div>
+                <div class="mt-8 border-t-2 border-amber-300 pt-4">
+                    <p class="text-2xl text-center">The relationship is a clear-cut <span class="font-bold text-4xl">CAUSE AND EFFECT</span>. The fear (Cause) directly led to the authorization for war (Effect).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Slide 15: Structuring Your Essay -->
+    <div id="slide-15" class="slide">
+        <div class="slide-content">
+            <div class="slide-bg">
+                <h2 class="text-5xl text-center mb-8 text-amber-300">BATTLE PLAN: YOUR ESSAY</h2>
+                <p class="text-2xl mb-6">Simple. Direct. Effective.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="border-l-8 border-red-500 pl-6">
+                        <h3 class="text-4xl">PARAGRAPH 1:<br/>HISTORICAL CONTEXT</h3>
+                        <p class="text-xl mt-2">Set the scene. Talk Cold War, Containment, Korea. Answer the W's. Weave in hints from both docs.</p>
+                    </div>
+                    <div class="border-l-8 border-cyan-400 pl-6">
+                        <h3 class="text-4xl">PARAGRAPH 2:<br/>THE RELATIONSHIP</h3>
+                        <p class="text-xl mt-2">State the relationship. Explain it with outside intel and evidence from the docs. Prove your case.</p>
+                    </div>
+                </div>
+                <div class="mt-8 bg-amber-300 text-gray-900 p-4 text-center">
+                    <p class="font-bold text-2xl uppercase">Remember: NO intro. NO conclusion. Just two killer paragraphs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Slide 16: Anchor Paper 1 -->
+    <div id="slide-16" class="slide">
+        <div class="slide-content">
+            <div class="slide-bg">
+                <h2 class="text-5xl text-center mb-8 text-amber-300">DEBRIEF: LEVEL 5 PAPER (PARA 1)</h2>
+                <h3 class="text-3xl mb-4">Paragraph 1: Historical Context</h3>
+                <blockquote class="border-l-4 border-gray-500 pl-4 text-lg text-gray-300 italic mb-6">
+                    "In the post-World War II era... As the Soviet Union continued to expand... the United States abandoned its traditional isolationism and, along with <span class="highlight">NATO</span> and <span class="highlight">SEATO</span>, attempted to <span class="highlight">contain Communism</span>..."
+                </blockquote>
+                <h3 class="text-3xl mb-2 text-cyan-400">ANALYSIS: WHY IT WORKS</h3>
+                <ul class="list-disc list-inside text-xl space-y-2">
+                    <li>Immediately sets the <span class="font-bold">BIG picture context</span> (Post-WWII).</li>
+                    <li>Drops key <span class="font-bold">outside intel</span> (NATO, SEATO).</li>
+                    <li>Names the grand strategy: <span class="font-bold">Containment</span>.</li>
+                    <li>This is analysis, <span class="font-bold">NOT</span> summary.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Slide 17: Anchor Paper 2 -->
+    <div id="slide-17" class="slide">
+        <div class="slide-content">
+             <div class="slide-bg">
+                <h2 class="text-5xl text-center mb-8 text-amber-300">DEBRIEF: LEVEL 5 PAPER (PARA 2)</h2>
+                <h3 class="text-3xl mb-4">Paragraph 2: The Relationship</h3>
+                <blockquote class="border-l-4 border-gray-500 pl-4 text-lg text-gray-300 italic mb-6">
+                    "These two documents represent a strong <span class="highlight">cause and effect relationship</span>... in Vietnam between the Communists in <span class="highlight">North Vietnam</span> against the U.S. backed <span class="highlight">South Vietnam</span>. ... The Gulf of Tonkin Resolution is an important example of a congressional action resulting from the widely held Domino principle (Doc 2)..."
+                </blockquote>
+                <h3 class="text-3xl mb-2 text-cyan-400">ANALYSIS: WHY IT WORKS</h3>
+                 <ul class="list-disc list-inside text-xl space-y-2">
+                    <li><span class="font-bold">States the relationship</span> loud and clear.</li>
+                    <li>Brings in crucial <span class="font-bold">outside intel</span> (North vs. South Vietnam).</li>
+                    <li>Directly <span class="font-bold">links the IDEA</span> from Doc 1 to the <span class="font-bold">ACTION</span> in Doc 2.</li>
+                    <li><span class="font-bold">Cites the document</span> properly. Clean and efficient.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 18: Why it Scored a 5 -->
+    <div id="slide-18" class="slide">
+        <div class="slide-content">
+            <div class="slide-bg">
+                <h2 class="text-5xl text-center mb-8 text-amber-300">THE ANATOMY OF A '5'</h2>
+                <p class="text-2xl mb-6">This paper scored max points because it was:</p>
+                <ul class="space-y-4 text-xl">
+                    <li class="flex items-start bg-gray-900 p-3"><span class="text-green-400 mr-4 font-bold text-2xl">✓</span><span class="font-bold">THOROUGH:</span> It hit both parts of the task in-depth. No stone left unturned.</li>
+                    <li class="flex items-start bg-gray-900 p-3"><span class="text-green-400 mr-4 font-bold text-2xl">✓</span><span class="font-bold">ANALYTICAL:</span> It explained the 'how' and 'why,' not just the 'what.'</li>
+                    <li class="flex items-start bg-gray-900 p-3"><span class="text-green-400 mr-4 font-bold text-2xl">✓</span><span class="font-bold">KNOWLEDGEABLE:</span> It was packed with relevant outside information.</li>
+                    <li class="flex items-start bg-gray-900 p-3"><span class="text-green-400 mr-4 font-bold text-2xl">✓</span><span class="font-bold">EVIDENCED:</span> It used facts from BOTH documents to back up its claims.</li>
+                </ul>
+                <p class="mt-6 text-xl text-center">A '5' isn't about being perfect. It's about executing the mission flawlessly according to the rubric.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Slide 19: Key Takeaways -->
+    <div id="slide-19" class="slide">
+        <div class="slide-content">
+            <div class="slide-bg">
+                <h2 class="text-5xl text-center mb-8 text-amber-300">YOUR FINAL BRIEFING</h2>
+                <h3 class="text-3xl mb-4 text-center">SEQ Set 1: The Game Plan</h3>
+                <ol class="list-decimal list-inside space-y-3 text-xl">
+                    <li><strong>SOURCES FIRST:</strong> Check author, title, and <span class="highlight">DATE</span>. This is your primary intel.</li>
+                    <li><strong>TWO PARAGRAPHS:</strong> Paragraph 1 = <span class="highlight">CONTEXT</span>. Paragraph 2 = <span class="highlight">RELATIONSHIP</span>. Stick to the plan.</li>
+                    <li><strong>THINK BIG PICTURE:</strong> For context, describe the <span class="highlight">ENTIRE ERA</span> leading up to the events.</li>
+                    <li><strong>BE DIRECT:</strong> Start Paragraph 2 by stating the relationship clearly.</li>
+                    <li><strong>USE YOUR OWN WORDS:</strong> Paraphrase to show you own the information.</li>
+                    <li><strong>CITE YOUR SOURCES:</strong> End sentences with `(Doc 1)` or `(Doc 2)` to show where you got your intel.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 20: Credits -->
+    <div id="slide-20" class="slide">
+        <div class="slide-content text-center">
+            <h1 class="text-6xl text-amber-300 mb-8">MISSION COMPLETE</h1>
+            <p class="text-2xl">You have the intel. Now go execute.</p>
+        </div>
+    </div>
+
+
+    <!-- Navigation -->
+    <div id="navigation-bar" class="fixed bottom-0 left-0 right-0 p-4">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <button id="prevBtn" class="nav-btn bg-gray-300 text-gray-800 font-bold py-2 px-8 hover:bg-white">Prev</button>
+            <div id="slide-counter" class="text-gray-300 font-bold text-lg tabular-nums">1 / 20</div>
+            <button id="nextBtn" class="nav-btn bg-red-600 text-white font-bold py-2 px-8 hover:bg-red-500">Next</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const slideCounter = document.getElementById('slide-counter');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            function updateSlides() {
+                slides.forEach((slide, index) => {
+                    slide.classList.remove('active');
+                    if (index === currentSlide) {
+                        slide.classList.add('active');
+                    }
+                });
+                
+                slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+                prevBtn.disabled = currentSlide === 0;
+                nextBtn.disabled = currentSlide === totalSlides - 1;
+            }
+
+            function navigate(direction) {
+                const newSlide = currentSlide + direction;
+                if (newSlide >= 0 && newSlide < totalSlides) {
+                    currentSlide = newSlide;
+                    updateSlides();
+                }
+            }
+
+            nextBtn.addEventListener('click', () => navigate(1));
+            prevBtn.addEventListener('click', () => navigate(-1));
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') navigate(1);
+                if (e.key === 'ArrowLeft') navigate(-1);
+            });
+            
+            updateSlides();
+        });
+    </script>
+</body>
+</html>
